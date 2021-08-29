@@ -1,0 +1,59 @@
+1)html
+<div class="icono-menu">
+        <i class='bx bx-menu' id="icono-menu"></i>
+    </div>
+
+    <div class="cont-menu active" id="menu">
+        <ul>
+          <li></li>
+        </ul>
+    </div>
+
+
+
+2)css
+/* Estilos para el ícono del Menú */
+.icono-menu{
+    margin: 40px 50px;
+    position: relative;
+    z-index: 10;
+}
+
+.icono-menu img{
+    width: 40px;
+    cursor: pointer;
+    
+}
+
+/* Estilos para el contenedor del Menú */
+.cont-menu{
+    background-color: rgb(39, 14, 128);
+    width: 400px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .5s ease;
+}
+
+/* Estilos por agregar en JavaScript */
+.active{
+    transform: translate(-600px);
+}
+
+
+
+
+
+3)javasript
+
+const iconoMenu = document.querySelector('#icono-menu'),
+      menu = document.querySelector('#menu');
+
+iconoMenu.addEventListener('click', (e) => {
+
+    // Alternamos estilos para el menu y body
+    menu.classList.toggle('active');
+    document.body.classList.toggle('opacity');
+   
+});
